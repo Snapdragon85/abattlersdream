@@ -2,6 +2,9 @@ import time
 import os
 import random
 
+damage= 1
+health = 10
+
 
 def wait(n):
     time.sleep(n)
@@ -10,7 +13,7 @@ def wait(n):
 def name():
     name_pool = ["Jared", "Nico", "Jay", "Chris", "Roy", "Scott", "Theodore",
                 "Emma", "Alexia", "Naomi", "Molly", "Julie", "Hazel", "Sebastian",
-                "Nathan", "Aarav", "Joe", "Munem", "Jivin", "Vince", "Ayrown"]
+                "Nathan", "Aarav", "Joseph", "Munem", "Jivin", "Vince", "Ayrown"]
     selected = random.choice(name_pool)
     print("Battler", selected, "would like to fight!")
 
