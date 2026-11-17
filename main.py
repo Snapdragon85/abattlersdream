@@ -8,7 +8,7 @@ start = input("Begin game? (y/n)")
 if start == "y":
     print("Begin Fight!")
     command.clear()
-    command.start_battle()
+    command.battle()
 
 if start == "n":
     print("Goodnight!")
