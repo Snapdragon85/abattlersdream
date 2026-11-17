@@ -2,9 +2,13 @@ import time
 import os
 import random
 
-damage= 1
-health = 10
+PlayerMaxHealth = 10
+PlayerHealth = 10
+PlayerDamage = 2
 
+EnemyMaxHealth = 10
+EnemyHealth = 10
+EnemyDamage = 1
 
 def wait(n):
     time.sleep(n)
@@ -21,8 +25,12 @@ def whatdonext():
     print("What will you do?")
     print("1) FIGHT, 2) SHOP, 3) QUIT")
     choice = input(":")
-    if choice == 1:
-        print("Dealt 2 damage!")
+    if choice == "1":
+        global EnemyHealth
+        global PlayerDamage
+        global EnemyMaxHealth
+        EnemyHealth -= PlayerDamage
+        print("Dealt", PlayerDamage, "Damage!")
 
 
 def battle():
@@ -31,8 +39,6 @@ def battle():
     name()
     wait(2.5)
     whatdonext()
-
-
 
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
