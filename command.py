@@ -9,12 +9,14 @@ PlayerDamage = 2
 EnemyMaxHealth = 10
 EnemyHealth = 10
 EnemyDamage = 1
+selected = "none"
 
 def wait(n):
     time.sleep(n)
 
 
 def name():
+    global selected
     name_pool = ["Jared", "Nico", "Jay", "Chris", "Roy", "Scott", "Theodore",
                 "Emma", "Alexia", "Naomi", "Molly", "Julie", "Hazel", "Sebastian",
                 "Nathan", "Aarav", "Joseph", "Munem", "Jivin", "Vince", "Ayrown"]
@@ -29,8 +31,17 @@ def whatdonext():
         global EnemyHealth
         global PlayerDamage
         global EnemyMaxHealth
+        global selected
+
         EnemyHealth -= PlayerDamage
         print("Dealt", PlayerDamage, "Damage!")
+        print(EnemyHealth)
+        if EnemyHealth <= 0:
+            print("Battler", selected, "Defeated!")
+            name()
+            EnemyHealth = EnemyMaxHealth
+        whatdonext()
+        
 
 
 def battle():
