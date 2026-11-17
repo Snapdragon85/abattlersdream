@@ -9,7 +9,8 @@ def wait(n):
 
 def name():
     name_pool = ["Jared", "Nico", "Jay", "Chris", "Roy", "Scott", "Theodore",
-                "Emma", "Alexia", "Naomi", "Molly", "Julie", "Hazel", "Sebastian"]
+                "Emma", "Alexia", "Naomi", "Molly", "Julie", "Hazel", "Sebastian",
+                "Nathan", "Aarav", "Joe", "Munem", "Jivin", "Vince", "Ayrown"]
     selected = random.choice(name_pool)
     print("Battler", selected, "would like to fight!")
 
