@@ -35,9 +35,12 @@ def whatdonext():
 
         EnemyHealth -= PlayerDamage
         print("Dealt", PlayerDamage, "Damage!")
+        wait(1.5)
         print(EnemyHealth)
         if EnemyHealth <= 0:
             print("Battler", selected, "Defeated!")
+            wait(1.5)
+            clear()
             name()
             EnemyHealth = EnemyMaxHealth
         whatdonext()
