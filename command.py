@@ -49,7 +49,7 @@ def whatdonext():
         wait(5)
         print("what")
         wait(2)
-    if choice == "4":
+    if choice == "Sjelter":
         clear()
         print("Sjelter?")
         wait(2)
