@@ -35,6 +35,8 @@ def shop():
     global ShopUpgradePrice
     global ShopHealPrice
     global PlayerDamage
+    global EnemyDamage
+    global EnemyMaxHealth
 
     print("Welcome to the SHOP! Gold:", PlayerGold, "G")
     print("1) UPGRADE, 2) HEAL, 3) EXIT")
@@ -55,8 +57,12 @@ def shop():
                 PlayerGold -= ShopUpgradePrice
                 wait(1)
                 PlayerDamage += 2
+                PlayerMaxHealth + 5
+                EnemyMaxHealth += 5
+                EnemyDamage += 2
                 ShopUpgradePrice += 5
                 print("Damage increased to ", PlayerDamage)
+                print("Health Increased to ", PlayerMaxHealth)
                 wait(1.5)
                 whatdonext()
         
