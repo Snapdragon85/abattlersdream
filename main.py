@@ -11,6 +11,6 @@ if start == "y":
     command.battle()
 
 if start == "n":
-    print("Goodnight!")
+    print("Maybe next time!")
     time.sleep(1)
     sys.exit()
