@@ -34,8 +34,9 @@ def shop():
     global PlayerGold
     global ShopUpgradePrice
     global ShopHealPrice
+    global PlayerDamage
 
-    print("Welcome to the SHOP!")
+    print("Welcome to the SHOP! Gold:", PlayerGold, "G")
     print("1) UPGRADE, 2) HEAL, 3) EXIT")
     shopChoice = input(":")
     if shopChoice == "1":
@@ -53,9 +54,15 @@ def shop():
                 print("A deals a deal!")
                 PlayerGold -= ShopUpgradePrice
                 wait(1)
+                PlayerDamage += 2
+                ShopUpgradePrice += 5
+                print("Damage increased to ", PlayerDamage)
+                wait(1.5)
                 whatdonext()
         
     if shopChoice == "2":
+        global PlayerMaxHealth
+        global PlayerHealth
         if PlayerGold == 0:
             print("No GOLD")
             whatdonext()
@@ -64,21 +71,25 @@ def shop():
         if PlayerGold >= ShopHealPrice:
             print("A deals a deal!")
             PlayerGold -= ShopHealPrice
+            PlayerHealth = PlayerMaxHealth
             wait(1)
             whatdonext()        
 
 def whatdonext():
+    global EnemyHealth
+    global PlayerDamage
+    global EnemyMaxHealth
+    global PlayerHealth
+    global selected
+    global AddedGold
+    global ShopUpgradePrice
+    global PlayerGold
+    
     print("What will you do?")
+    print("Enemy HP:", EnemyHealth, ". Your  HP:", PlayerHealth)
     print("1) FIGHT, 2) SHOP, 3) QUIT")
     choice = input(":")
     if choice == "1":
-        global EnemyHealth
-        global PlayerDamage
-        global EnemyMaxHealth
-        global selected
-        global AddedGold
-        global ShopUpgradePrice
-        global PlayerGold
 
         EnemyHealth -= PlayerDamage
         print("Dealt", PlayerDamage, "Damage!")
@@ -93,11 +104,22 @@ def whatdonext():
             clear()
             name()
             EnemyHealth = EnemyMaxHealth
-        whatdonext()
+            whatdonext()
+        else:
+            print("Battler", selected, "Dealt", EnemyDamage, "HP!")
+            wait(1.5)
+            PlayerHealth -= EnemyDamage
+            if PlayerHealth <= 0:
+                clear()
+                print("GAME OVER")
+                wait(5)
+                print("u suck")
+                return 0
+            whatdonext()
     if choice == "2":
         shop()
     if choice == "3":
-        print("Okay then bye bye now")
+        print("Okay cya")
         wait(2)
     if choice == "":
         wait(5)
