@@ -3,6 +3,7 @@ import command
 def shop():
     
     global PlayerGold
+    global PlayerMaxHealth
     global ShopUpgradePrice
     global ShopHealPrice
     global PlayerDamage

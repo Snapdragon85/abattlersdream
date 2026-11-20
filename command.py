@@ -74,7 +74,7 @@ def whatdonext():
                 return 0
             whatdonext()
     if choice == "2":
-        shop()
+        shop.shop()
     if choice == "3":
         print("Okay cya")
         wait(2)
