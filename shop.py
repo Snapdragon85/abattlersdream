@@ -53,3 +53,5 @@ def shop():
             command.PlayerHealth = command.PlayerMaxHealth
             command.wait(1)
             command.whatdonext()
+    if shopChoice == "3":
+        command.whatdonext()
