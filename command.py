@@ -74,23 +74,25 @@ def whatdonext():
                 print("u suck")
                 sys.exit(0)
             whatdonext()
-    if choice == "2":
+    elif choice == "2":
         shop.shop()
-    if choice == "3":
+    elif choice == "3":
         print("Okay cya")
         wait(2)
-    if choice == "":
+    elif choice == "":
         wait(5)
         print("what")
         wait(2)
-    if choice == "Sjelter":
+    elif choice == "Sjelter":
         clear()
         print("Sjelter?")
         wait(3)
-    if choice == "sjelter":
-            clear()
-            print("Sjelter?")
-            wait(3)
+    elif choice == "sjelter":
+        clear()
+        print("Sjelter?")
+        wait(3)
+    else:
+        whatdonext()
 
 
 def battle():
