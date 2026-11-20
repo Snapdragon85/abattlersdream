@@ -28,7 +28,7 @@ def name():
     name_pool = ["Jared", "Nico", "Jay", "Chris", "Roy", "Scott", "Theodore",
                 "Emma", "Alexia", "Naomi", "Molly", "Julie", "Hazel", "Sebastian",
                 "Nathan", "Aarav", "Joseph", "Munem", "Jivin", "Vince", "Ayrown",
-                "John", "Dan", "Dilan", "Joshua", "Zakir", "Vicky", "Wallace", "Phil"]
+                "John", "Dan", "Dilan", "Joshua", "Zakir", "Vicky", "Wallace", "Phil", "Brian"]
     selected = random.choice(name_pool)
     print("Battler", selected, "would like to fight!")
     wait(2.5)     
