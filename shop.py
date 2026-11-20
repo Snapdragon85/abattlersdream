@@ -41,17 +41,22 @@ def shop():
                 command.whatdonext()
         
     if shopChoice == "2":
-        if command.PlayerGold == 0:
-            print("No GOLD")
-            command.wait(2)
-            command.whatdonext()
-        if command.PlayerGold < command.ShopHealPrice:
-            print("Not Enoguh Gold!")
-        if command.PlayerGold >= command.ShopHealPrice:
-            print("A deals a deal!")
-            command.PlayerGold -= command.ShopHealPrice
-            command.PlayerHealth = command.PlayerMaxHealth
-            command.wait(1)
-            command.whatdonext()
+        print("COST:", command.ShopHealPrice, "G")
+        spend = input("PROCEED?(y/n)")
+        if spend == "n":
+            shop()
+        if spend == "y":
+            if command.PlayerGold == 0:
+                print("No GOLD")
+                command.wait(2)
+                command.whatdonext()
+            if command.PlayerGold < command.ShopHealPrice:
+                print("Not Enoguh Gold!")
+            if command.PlayerGold >= command.ShopHealPrice:
+                print("A deals a deal!")
+                command.PlayerGold -= command.ShopHealPrice
+                command.PlayerHealth = command.PlayerMaxHealth
+                command.wait(1)
+                command.whatdonext()
     if shopChoice == "3":
         command.whatdonext()
