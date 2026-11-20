@@ -1,6 +1,7 @@
 import time
 import os
 import random
+import sys
 
 import shop
 
@@ -71,7 +72,7 @@ def whatdonext():
                 print("GAME OVER")
                 wait(5)
                 print("u suck")
-                return 0
+                sys.exit(0)
             whatdonext()
     if choice == "2":
         shop.shop()
